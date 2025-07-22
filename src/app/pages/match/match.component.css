@@ -1,0 +1,404 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+.header {
+    width: 100%;
+    padding: 2px 0;
+    background-color: #1B357E;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+.header .interface{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.header .logo img{
+    width: 101px;
+    height: auto;
+}
+
+.header .menu-desktop nav ul{
+    list-style-type: none;
+    margin-left: 950px;
+}
+
+.header .menu-desktop nav ul li{
+    display: inline-block;
+    margin: 0 40px;
+}
+
+.header .menu-desktop nav ul li a{
+    text-decoration: none;
+    color: #fff;
+    margin-left: 148px;
+    font-size: 20px;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.menu-desktop nav a:hover{
+    transform: scale(1.1);
+    transition: 0.7s;
+}
+
+.quiz-container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  color: #1B357E;
+}
+
+
+.progress-bar-container {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background-color: #dbe7ff;
+  border-radius: 4px;
+  margin-bottom: 1.5rem;
+  z-index: 999;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: #1700F4; 
+  width: 0%;
+  transition: width 0.3s ease-in-out;
+  border-radius: 4px;
+}
+
+.progress-text{
+  font-size: 0.8;
+  font-weight: bold;
+  color: #1B357E;
+  margin-left: 0.5rem;
+}
+
+.quiz-box,
+.result-box {
+  border: 2px solid #1351D8;
+  padding: 2rem;
+  border-radius: 1rem;
+  background-color: #fff;
+  box-shadow: 0 0 12px rgba(0,0,0,0.1);
+}
+
+.result-box ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.result-box li {
+  list-style: none;
+  flex: 0 1 calc(50% - 20px); 
+  max-width: 400px;
+}
+
+.car-match {
+  height: 100%; 
+  padding: 1rem;
+  border: 2px solid #003B7A;
+  border-radius: 12px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin: 0.5rem 0;
+}
+
+button {
+  background-color: #00095C;
+  color: white;
+  width: 400px;
+  height: 50px;
+  padding: 0.8rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  background-color: #1700F4;
+  transition: 0.8s;
+}
+
+.car-name {
+  font-weight: bold;
+  font-size: 1.3rem;
+  color: #003B7A;
+}
+
+.restart {
+  margin-top: 2rem;
+}
+
+.result-box {
+  text-align: center;
+  padding: 2rem;
+}
+
+.car-name {
+  font-weight: bold;
+  font-size: 1.2rem;
+  display: block;
+  color: #00095C;
+  margin-bottom: 10px;
+}
+
+.car-image {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.score {
+  color: #444;
+  font-size: 0.95rem;
+}
+
+.explore-button{
+  display: inline-block;
+  margin: 10px 0;
+  padding: 3px  16px;
+  background-color: #00095C;
+  color: #fff;
+  font-weight: 800;
+  border-radius: 18px;
+  text-decoration: none;
+  width: 170px;
+  height: 30px;
+  transition: 0.3s ease;
+}
+
+.explore-button:hover{
+  background-color: #1700F4;
+  transition: 0.8s;
+}
+
+
+
+
+
+@media (max-width: 1024px) {
+  
+  .interface {
+    padding: 0 1rem;
+  }
+
+  
+  header, .header {
+    flex-wrap: wrap;
+    padding: 10px 15px;
+  }
+
+ 
+  header .logo img,
+  .header .logo img {
+    width: 80px;
+  }
+
+ 
+  header .menu-desktop nav ul,
+  .header .menu-desktop nav ul {
+    margin-left: 0 !important; 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  header .menu-desktop nav ul li,
+  .header .menu-desktop nav ul li {
+    margin: 5px 10px;
+  }
+
+  header .menu-desktop nav ul li a,
+  .header .menu-desktop nav ul li a {
+    margin-left: 0 !important;
+    font-size: 18px;
+  }
+
+  
+  .hero-site .txt-hero h1 {
+    font-size: 38px;
+    line-height: 46px;
+  }
+
+  .hero-site .txt-hero p {
+    font-size: 18px;
+  }
+
+  .hero-site button {
+    width: 100%;
+    max-width: 220px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  header, .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  header .menu-desktop nav ul,
+  .header .menu-desktop nav ul {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  header .menu-desktop nav ul li a,
+  .header .menu-desktop nav ul li a {
+    font-size: 16px;
+  }
+
+  
+  .hero-site .txt-hero {
+    padding: 0 1rem;
+  }
+
+  .hero-site .txt-hero h1 {
+    font-size: 28px;
+    line-height: 34px;
+  }
+
+  .hero-site .txt-hero p {
+    font-size: 16px;
+  }
+
+  .hero-site button {
+    max-width: 100%;
+  }
+
+  
+  .quiz-container {
+    padding: 1rem;
+  }
+
+ 
+  .quiz-box h2,
+  .result-box h2 {
+    font-size: 20px;
+    text-align: center;
+  }
+
+
+  button {
+    width: 100% !important;
+    max-width: 300px !important;
+  }
+
+ 
+  .result-box ul {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .result-box li {
+    flex: 1 1 100% !important;
+    max-width: 100% !important;
+  }
+
+  
+  .car-match {
+    align-items: center;
+    text-align: center;
+  }
+
+  .car-image {
+    max-width: 90%;
+    height: auto;
+    margin: 0 auto 1rem auto;
+  }
+
+  .explore-button {
+    width: 100%;
+    max-width: 170px;
+    font-size: 14px;
+  }
+
+  
+  .progress-bar-container {
+    height: 6px;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+ 
+  .hero-site .txt-hero h1 {
+    font-size: 22px;
+    line-height: 28px;
+  }
+
+  .hero-site .txt-hero p {
+    font-size: 14px;
+  }
+
+  header .menu-desktop nav ul,
+  .header .menu-desktop nav ul {
+    gap: 8px;
+  }
+
+  
+  button {
+    max-width: 100% !important;
+    font-size: 14px !important;
+    height: 45px !important;
+  }
+
+ 
+  .car-name {
+    font-size: 1rem;
+  }
+
+  .score {
+    font-size: 0.85rem;
+  }
+
+  .explore-button {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+}
