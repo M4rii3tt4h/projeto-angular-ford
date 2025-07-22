@@ -53,7 +53,7 @@
 
           <span class="car-name">{{ car }}</span>
           <img [src]="carImages[car]" [alt]="car" class="car-image" />
-          <a *ngIf="carLinks[car]" [href]="carLinks[car]" target="_blank" class="explore-button">Explorar Mais ></a>
+          <button class="explore-button" (click)="openModal(car)">Explorar Mais ></button>
           <p class="score">⭐ Pontuação: {{ scores[car] }} ponto(s)</p>
 
         </div>
@@ -62,6 +62,36 @@
     </ul>
     
     <button class="restart" (click)="restartQuiz()">Refazer Quiz</button>
+
+    <div class="modal-overlay" *ngIf="showModal">
+  <div class="modal-content">
+    <h3>{{ selectedCar }}</h3>
+    <table>
+      <tr><td><strong>Preços:</strong></td><td>{{ carDetails[selectedCar]?.preco }}</td></tr>
+      <tr><td><strong>Versões:</strong></td><td>{{ carDetails[selectedCar]?.versoes }}</td></tr>
+      <tr><td><strong>Motor:</strong></td><td>{{ carDetails[selectedCar]?.motor }}</td></tr>
+      <tr><td><strong>Potência:</strong></td><td>{{ carDetails[selectedCar]?.potencia }}</td></tr>
+      <tr><td><strong>Torque:</strong></td><td>{{ carDetails[selectedCar]?.torque }}</td></tr>
+      <tr *ngIf="carDetails[selectedCar]?.aceleracao">
+        <td><strong>Aceleração:</strong></td><td>{{ carDetails[selectedCar]?.aceleracao }}</td>
+      </tr>
+      <tr *ngIf="carDetails[selectedCar]?.eletrico">
+        <td><strong>Elétrico:</strong></td><td>Sim</td>
+      </tr>
+      <tr *ngIf="carDetails[selectedCar]?.manual">
+        <td><strong>Câmbio Manual:</strong></td><td>Sim</td>
+      </tr>
+    </table>
+
+    <div class="modal-buttons">
+      <button (click)="closeModal()">Fechar</button>
+      <a [href]="carLinks[selectedCar]" target="_blank">
+        <button>Detalhes</button>
+      </a>
+    </div>
+  </div>
+</div>
+
 
   </div>
 

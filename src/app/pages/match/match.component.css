@@ -1,5 +1,4 @@
-
-
+/* Reset e base */
 * {
   padding: 0;
   margin: 0;
@@ -7,62 +6,70 @@
   font-family: "Roboto", sans-serif;
 }
 
-.header {
-    width: 100%;
-    padding: 2px 0;
-    background-color: #1B357E;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 20px;
-}
-
-.header .interface{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    
-}
-
-.header .logo img{
-    width: 101px;
-    height: auto;
-}
-
-.header .menu-desktop nav ul{
-    list-style-type: none;
-    margin-left: 950px;
-}
-
-.header .menu-desktop nav ul li{
-    display: inline-block;
-    margin: 0 40px;
-}
-
-.header .menu-desktop nav ul li a{
-    text-decoration: none;
-    color: #fff;
-    margin-left: 148px;
-    font-size: 20px;
-    display: inline-block;
-    transition: transform 0.3s ease;
-}
-
-.menu-desktop nav a:hover{
-    transform: scale(1.1);
-    transition: 0.7s;
-}
-
-.quiz-container {
-  max-width: 700px;
-  margin: 0 auto;
-  padding: 2rem;
-  font-family: 'Roboto', sans-serif;
-  text-align: center;
+body {
+  min-width: 360px;
+  background: #f9f9f9;
   color: #1B357E;
 }
 
+/* Header */
+.header {
+  width: 100%;
+  background-color: #1B357E;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  flex-wrap: wrap;
+}
 
+.header .logo img {
+  width: 100px;
+  height: auto;
+}
+
+.interface {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+.menu-desktop nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+.menu-desktop nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  padding: 8px 12px;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.menu-desktop nav ul li a:hover {
+  transform: scale(1.1);
+}
+
+/* Quiz Container */
+.quiz-container {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 0 12px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+/* Progress Bar */
 .progress-bar-container {
   position: sticky;
   top: 0;
@@ -77,46 +84,89 @@
 
 .progress-bar {
   height: 100%;
-  background-color: #1700F4; 
+  background-color: #1700F4;
   width: 0%;
   transition: width 0.3s ease-in-out;
   border-radius: 4px;
 }
 
-.progress-text{
-  font-size: 0.8;
+.progress-text {
+  font-size: 0.9rem;
   font-weight: bold;
+  margin-bottom: 1rem;
+  display: block;
   color: #1B357E;
-  margin-left: 0.5rem;
 }
 
-.quiz-box,
-.result-box {
+/* Quiz & Result Boxes */
+.quiz-box, .result-box {
   border: 2px solid #1351D8;
   padding: 2rem;
   border-radius: 1rem;
   background-color: #fff;
   box-shadow: 0 0 12px rgba(0,0,0,0.1);
+  margin-top: 1rem;
 }
 
+.quiz-box h2, .result-box h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+/* Lista de opções */
+.quiz-box ul, .result-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Lista itens */
+.quiz-box ul li, .result-box ul li {
+  margin: 0.75rem 0;
+  width: 100%;
+}
+
+/* Botões das alternativas - responsivo e texto não vaza */
+.quiz-box button {
+  width: 100%;             /* ocupa toda largura do container pai */
+  max-width: 100%;
+  padding: 0.8rem 1rem;
+  font-size: 1rem;
+  white-space: normal;     /* permite quebra de linha */
+  word-wrap: break-word;   /* quebra palavras longas */
+  overflow-wrap: break-word;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  background-color: #00095C;
+  color: #fff;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.quiz-box button:hover {
+  background-color: #1700F4;
+}
+
+/* Resultado carros */
 .result-box ul {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: stretch;
   gap: 20px;
   padding: 0;
   margin: 0;
 }
 
 .result-box li {
-  list-style: none;
-  flex: 0 1 calc(50% - 20px); 
+  flex: 0 1 calc(50% - 20px);
   max-width: 400px;
+  list-style: none;
 }
 
 .car-match {
-  height: 100%; 
+  height: 100%;
   padding: 1rem;
   border: 2px solid #003B7A;
   border-radius: 12px;
@@ -124,69 +174,19 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-
-h2 {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-}
-
-li {
-  margin: 0.5rem 0;
-}
-
-button {
-  background-color: #00095C;
-  color: white;
-  width: 400px;
-  height: 50px;
-  padding: 0.8rem 1.2rem;
-  font-size: 1rem;
-  font-weight: 500;
-  border: none;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  transition: 0.3s ease;
-}
-
-button:hover {
-  background-color: #1700F4;
-  transition: 0.8s;
+  text-align: center;
 }
 
 .car-name {
   font-weight: bold;
   font-size: 1.3rem;
   color: #003B7A;
-}
-
-.restart {
-  margin-top: 2rem;
-}
-
-.result-box {
-  text-align: center;
-  padding: 2rem;
-}
-
-.car-name {
-  font-weight: bold;
-  font-size: 1.2rem;
-  display: block;
-  color: #00095C;
   margin-bottom: 10px;
 }
 
 .car-image {
   max-width: 100%;
   height: auto;
-  object-fit: cover;
   border-radius: 8px;
   margin-bottom: 10px;
 }
@@ -194,12 +194,10 @@ button:hover {
 .score {
   color: #444;
   font-size: 0.95rem;
+  margin-bottom: 10px;
 }
 
-.explore-button{
-  display: inline-block;
-  margin: 10px 0;
-  padding: 3px  16px;
+.explore-button {
   background-color: #00095C;
   color: #fff;
   font-weight: 800;
@@ -207,149 +205,198 @@ button:hover {
   text-decoration: none;
   width: 170px;
   height: 30px;
-  transition: 0.3s ease;
+  line-height: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border: none;
+  margin-bottom: 10px;
 }
 
-.explore-button:hover{
+.explore-button:hover {
   background-color: #1700F4;
-  transition: 0.8s;
 }
 
+.restart {
+  margin-top: 2rem;
+  background-color: #00095C;
+  color: white;
+  padding: 0.8rem 1.2rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  max-width: 320px;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
 
+.restart:hover {
+  background-color: #1700F4;
+}
 
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.65);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  padding: 1rem;
+  box-sizing: border-box;
+}
 
+.modal-content {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 500px;
+  width: 100%;
+  color: #1B357E;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.3s ease-in-out;
+  overflow-y: auto;
+  max-height: 90vh;
+}
 
-@media (max-width: 1024px) {
-  
-  .interface {
-    padding: 0 1rem;
+.modal-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 0.95rem;
+}
+
+.modal-content td {
+  padding: 0.5rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+  gap: 10px;
+}
+
+.modal-buttons button,
+.modal-buttons .explore-button {
+  width: 48%;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+  border-radius: 8px;
+  background-color: #00095C;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  line-height: normal;
+  transition: background-color 0.3s ease;
+}
+
+.modal-buttons button:hover,
+.modal-buttons .explore-button:hover {
+  background-color: #1700F4;
+}
+
+@keyframes fadeIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
   }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 
-  
-  header, .header {
-    flex-wrap: wrap;
+/* RESPONSIVIDADE */
+
+/* Tablets e telas médias */
+@media (max-width: 1024px) {
+
+  .header {
     padding: 10px 15px;
   }
 
- 
-  header .logo img,
   .header .logo img {
     width: 80px;
   }
 
- 
-  header .menu-desktop nav ul,
-  .header .menu-desktop nav ul {
-    margin-left: 0 !important; 
-    display: flex;
-    flex-wrap: wrap;
+  .menu-desktop nav ul {
     justify-content: center;
     gap: 15px;
   }
 
-  header .menu-desktop nav ul li,
-  .header .menu-desktop nav ul li {
-    margin: 5px 10px;
-  }
-
-  header .menu-desktop nav ul li a,
-  .header .menu-desktop nav ul li a {
-    margin-left: 0 !important;
+  .menu-desktop nav ul li a {
     font-size: 18px;
+    padding: 6px 10px;
   }
 
-  
-  .hero-site .txt-hero h1 {
-    font-size: 38px;
-    line-height: 46px;
+  .quiz-container {
+    max-width: 600px;
+    padding: 1.5rem;
   }
 
-  .hero-site .txt-hero p {
-    font-size: 18px;
-  }
-
-  .hero-site button {
-    width: 100%;
-    max-width: 220px;
+  button {
+    max-width: 300px;
   }
 }
 
+/* Celulares maiores (até 768px) */
 @media (max-width: 768px) {
 
-  header, .header {
+  .header {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    padding: 15px 1rem;
   }
 
-  header .menu-desktop nav ul,
-  .header .menu-desktop nav ul {
+  .menu-desktop nav ul {
     flex-direction: column;
     gap: 10px;
     width: 100%;
   }
 
-  header .menu-desktop nav ul li a,
-  .header .menu-desktop nav ul li a {
+  .menu-desktop nav ul li a {
     font-size: 16px;
   }
 
-  
-  .hero-site .txt-hero {
-    padding: 0 1rem;
-  }
-
-  .hero-site .txt-hero h1 {
-    font-size: 28px;
-    line-height: 34px;
-  }
-
-  .hero-site .txt-hero p {
-    font-size: 16px;
-  }
-
-  .hero-site button {
-    max-width: 100%;
-  }
-
-  
   .quiz-container {
+    max-width: 100%;
     padding: 1rem;
   }
 
- 
-  .quiz-box h2,
-  .result-box h2 {
-    font-size: 20px;
-    text-align: center;
+  .quiz-box h2, .result-box h2 {
+    font-size: 1.4rem;
   }
-
 
   button {
-    width: 100% !important;
-    max-width: 300px !important;
+    max-width: 100% !important;
+    height: 45px;
   }
 
- 
   .result-box ul {
     flex-direction: column;
     gap: 15px;
   }
 
   .result-box li {
-    flex: 1 1 100% !important;
     max-width: 100% !important;
   }
 
-  
   .car-match {
-    align-items: center;
     text-align: center;
+    align-items: center;
   }
 
   .car-image {
     max-width: 90%;
-    height: auto;
-    margin: 0 auto 1rem auto;
+    margin: 0 auto 1rem;
   }
 
   .explore-button {
@@ -358,37 +405,50 @@ button:hover {
     font-size: 14px;
   }
 
-  
   .progress-bar-container {
     height: 6px;
     margin-bottom: 1rem;
   }
 }
 
+/* Celulares pequenos até 480px */
 @media (max-width: 480px) {
- 
-  .hero-site .txt-hero h1 {
-    font-size: 22px;
-    line-height: 28px;
+
+  .header .logo img {
+    width: 70px;
   }
 
-  .hero-site .txt-hero p {
+  .menu-desktop nav ul li a {
     font-size: 14px;
+    padding: 6px 10px;
   }
 
-  header .menu-desktop nav ul,
-  .header .menu-desktop nav ul {
-    gap: 8px;
+  .quiz-container {
+    padding: 1rem;
+    margin: 1rem 0;
   }
 
-  
+  .quiz-box h2, .result-box h2 {
+    font-size: 1.2rem;
+  }
+
   button {
     max-width: 100% !important;
     font-size: 14px !important;
-    height: 45px !important;
+    height: auto !important;
+    min-height: 40px;
+    padding: 0.6rem 0.8rem;
   }
 
- 
+  .result-box ul {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .result-box li {
+    max-width: 100% !important;
+  }
+
   .car-name {
     font-size: 1rem;
   }
@@ -398,7 +458,8 @@ button:hover {
   }
 
   .explore-button {
-    font-size: 12px;
+    width: 100%;
+    font-size: 13px;
     padding: 6px 12px;
   }
 }

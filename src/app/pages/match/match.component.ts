@@ -108,6 +108,87 @@ carLinks: { [key: string]: string } = {
   'Maverick': 'https://www.ford.com.br/picapes/maverick/'
 };
 
+showModal: boolean = false;
+selectedCar: string = '';
+
+carDetails: { [key: string]: any } = {
+  'Ranger': {
+    preco: 'R$238.000 / R$366.600',
+    versoes: '6',
+    motor: '3.0 V6 ou 2.0',
+    potencia: '250cv / 170cv',
+    torque: '600Nm / 405Nm'
+  },
+  'Ranger Raptor': {
+    preco: 'R$490.000',
+    versoes: 'Única',
+    motor: '3.0 V6 Bi-turbo',
+    potencia: '397cv',
+    torque: '583Nm'
+  },
+  'Maverick': {
+    preco: 'R$219.900 / R$239.900',
+    versoes: '2',
+    motor: '2.0L Turbo EcoBoost GTDi',
+    potencia: '253cv',
+    torque: '380Nm'
+  },
+  'F-150': {
+    preco: 'R$560.000 / R$580.000',
+    versoes: '3',
+    motor: 'Coyote 5.0L V8',
+    potencia: '405cv',
+    torque: '556Nm'
+  },
+  'Territory': {
+    preco: 'R$215.000',
+    versoes: 'Única',
+    motor: '1.5L EcoBoost®',
+    potencia: '169cv',
+    torque: '250Nm'
+  },
+  'Bronco Sport': {
+    preco: 'R$260.000',
+    versoes: 'Única',
+    motor: '2.0L EcoBoost®',
+    potencia: '253cv',
+    torque: '380Nm'
+  },
+  'Mustang Mach-E': {
+    preco: 'R$480.000',
+    versoes: '3',
+    motor: 'Elétrico',
+    potencia: '487cv',
+    torque: '860Nm',
+    aceleracao: '0–100 km/h em 3,7s',
+    eletrico: true
+  },
+  'Mustang GT': {
+    preco: 'R$549.000',
+    versoes: '3',
+    motor: 'Coyote 5.0L V8',
+    potencia: '492cv',
+    torque: '567Nm'
+  },
+  'Mustang MT': {
+    preco: 'R$600.000',
+    versoes: '3',
+    motor: 'Coyote 5.0L V8',
+    potencia: '492cv',
+    torque: '567Nm',
+    manual: true
+  }
+};
+
+openModal(car: string) {
+  this.selectedCar = car;
+  this.showModal = true;
+}
+
+closeModal() {
+  this.selectedCar = '';
+  this.showModal = false;
+}
 
   scores: { [key: string]: number } = {};
 
