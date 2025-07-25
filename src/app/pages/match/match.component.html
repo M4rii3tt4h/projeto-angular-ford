@@ -1,3 +1,4 @@
+<!-- match.component.html -->
 <div class="header">
 <section class="logo">
   <img src="img/ford3logo-removebg-preview.png" alt="Logo da Ford">
@@ -84,7 +85,7 @@
     </table>
 
     <div class="modal-buttons">
-      <button (click)="closeModal()">Fechar</button>
+      <button class="btn-fechar" aria-label="Fechar modal" (click)="closeModal()">X</button>
       <a [href]="carLinks[selectedCar]" target="_blank" class="explore-button">Detalhes</a>
     </div>
   </div>

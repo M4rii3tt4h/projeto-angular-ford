@@ -1,4 +1,4 @@
-/* Reset e base */
+/* match.component.css */
 * {
   padding: 0;
   margin: 0;
@@ -30,7 +30,7 @@ body {
 
 .interface {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   flex: 1;
 }
@@ -282,8 +282,7 @@ body {
   gap: 10px;
 }
 
-.modal-buttons button,
-.modal-buttons .explore-button {
+.modal-buttons .explore-button{
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -304,9 +303,27 @@ body {
   transition: background-color 0.3s ease;
 }
 
-.modal-buttons button:hover,
 .modal-buttons .explore-button:hover {
   background-color: #1700F4;
+}
+
+.btn-fechar {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #333;
+  font-weight: bold;
+  line-height: 1;
+  padding: 0;
+  transition: color 0.3s ease;
+}
+
+.btn-fechar:hover {
+  color: #00095C;
 }
 
 @keyframes fadeIn {
